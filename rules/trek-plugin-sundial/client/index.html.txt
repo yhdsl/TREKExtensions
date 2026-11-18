@@ -1,0 +1,59 @@
+@AUTHOR=YHDSL
+@TARGET=client/index.html
+@DELIMITER=|
+
+<title>Sundial</title>|<title>日晷</title>
+<h1 id="title">Sundial</h1>|<h1 id="title">日晷</h1>
+id="subtitle">Sunrise, golden hour and blue hour, wherever each day takes you.|id="subtitle">无论每天前往何处，都能查看日出、黄金时刻和蓝调时刻。
+class="trek-label" for="zone" style="margin:0">Time zone</label>|class="trek-label" for="zone" style="margin:0">时区</label>
+text: 'Automatic (by longitude)'|text: '自动按经度估算'
+'Time zone pinned to ' + sel.value|'时区已固定为 ' + sel.value
+: 'Time zone back to automatic'|: '时区已恢复为自动'
+: 'Sundial';|: '日晷';
+'Sun times for ' + m.summary.computed + ' of ' + m.summary.total + ' days, golden hour to ' + m.settings.goldenAltitude + '° above the horizon|'太阳时刻：共 ' + m.summary.computed + ' / ' + m.summary.total + ' 天；黄金时刻结束时太阳高度角为 ' + m.settings.goldenAltitude + '°
+'Sunrise, golden hour and blue hour, wherever each day takes you.|'无论每天前往何处，都能查看日出、黄金时刻和蓝调时刻。
+text: 'No days yet'|text: '尚无行程日期'
+'Give the trip dates and Sundial will plot every day.|'设置行程日期后，日晷即可绘制每天的太阳时刻。
+tile('Earliest sunrise'|tile('最早日出'
+tile('Latest sunset'|tile('最晚日落'
+tile('Longest day'|tile('最长白昼'
+tile('Shoot days'|tile('摄影日'
+'day ' + s.earliestSunrise.day|'第 ' + s.earliestSunrise.day + ' 天'
+'day ' + s.latestSunset.day|'第 ' + s.latestSunset.day + ' 天'
+'day ' + s.longestDay.day|'第 ' + s.longestDay.day + ' 天'
+s.polarDays + ' midnight sun|s.polarDays + ' 天极昼
+s.polarNights + ' polar night|s.polarNights + ' 天极夜
+[['var(--sd-night)', 'Night']|[['var(--sd-night)', '夜间']
+['var(--sd-nautical)', 'Twilight']|['var(--sd-nautical)', '暮光']
+['var(--sd-blue)', 'Blue hour']|['var(--sd-blue)', '蓝调时刻']
+['var(--sd-gold)', 'Golden hour']|['var(--sd-gold)', '黄金时刻']
+['var(--sd-day)', 'Daylight']|['var(--sd-day)', '日照']
+'A stop with a start time'|'有开始时间的停靠点'
+text: 'local time'|text: '当地时间'
+g.appendChild(svg('title', {})).textContent = 'Day ' + d.number + ' daylight|g.appendChild(svg('title', {})).textContent = '第 ' + d.number + ' 天日照时段
+{ golden: 'golden hour', blue: 'blue hour', day: 'daylight', dark: 'dark' }|{ golden: '黄金时刻', blue: '蓝调时刻', day: '日照', dark: '夜间' }
+' at sunrise'|' 日出时'
+' at sunset'|' 日落时'
+text: 'no located stop or stay'|text: '没有带坐标的停靠点或住宿地点'
+text: 'Day ' + d.number|text: '第 ' + d.number + ' 天'
+title: 'Pin a different zone, or clear it to follow each day\'s longitude'|title: '固定其他时区，或清除设置以按每天的经度估算时区'
+text: d.zoneMismatch.pinned + ' clock · locally about ' + offsetLabel(d.zoneMismatch.estimatedOffset)|text: '固定时区 ' + d.zoneMismatch.pinned + '；当地时间约为 ' + offsetLabel(d.zoneMismatch.estimatedOffset)
+add('sun', 'up all day')|add('太阳', '全天可见')
+add('daylight', '24h 00m'|add('日照时长', '24h 00m'
+add('sun', 'below the horizon')|add('太阳', '位于地平线以下')
+add('twilight', t.civilDawn ? t.civilDawn + ' – ' + t.civilDusk : 'none'|add('暮光', t.civilDawn ? t.civilDawn + ' – ' + t.civilDusk : '无'
+'  ·  golden to '|'  ·  黄金时刻结束于 '
+'  ·  golden light all day'|'  ·  全天为黄金光线'
+'  ·  golden from '|'  ·  黄金时刻始于 '
+add('blue', [rng(t.civilDawn, t.blueDawnEnd), rng(t.blueDuskStart, t.civilDusk)].filter(Boolean).join('  ·  ') || 'none'|add('蓝调时刻', [rng(t.civilDawn, t.blueDawnEnd), rng(t.blueDuskStart, t.civilDusk)].filter(Boolean).join('  ·  ') || '无'
+add('light', s.dayLength)|add('日照时长', s.dayLength)
+text: d.reason === 'no-date' ? 'No date on this day. ' : 'Nowhere to compute from yet. '|text: d.reason === 'no-date' ? '这一天尚无日期。' : '尚无可用于计算的位置。'
+? 'Give the trip dates to plot it.' : 'Add a located stop or a stay and the sun times appear.'|? '设置行程日期即可绘制太阳时刻。' : '添加带坐标的停靠点或住宿地点，即可查看太阳时刻。'
+title: d.shoot.on ? 'Unmark shoot day' : 'Mark as a shoot day'|title: d.shoot.on ? '取消摄影日标记' : '标记为摄影日'
+'Day ' + d.number + ' unmarked'|'第 ' + d.number + ' 天已取消摄影日标记'
+'Day ' + d.number + ' marked as a shoot day'|'第 ' + d.number + ' 天已标记为摄影日'
+placeholder: 'What are you shooting? (shared with the trip)'|placeholder: '拍摄内容 (与行程成员共享)'
+'Note saved'|'备注已保存'
+text: 'Shoot day'|text: '摄影日'
+text: 'Open a trip'|text: '打开一个行程'
+'Sundial lives in the trip planner and plots the sun for the trip you are looking at.|'日晷位于行程规划器中，可为当前查看的行程绘制太阳时刻。

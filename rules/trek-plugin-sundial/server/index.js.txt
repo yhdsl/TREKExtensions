@@ -1,0 +1,44 @@
+@AUTHOR=YHDSL
+@TARGET=server/index.js
+@DELIMITER=|
+
+`Day ${d.number}` + (d.date ? ` (${d.date})` : '')|`第 ${d.number} 天` + (d.date ? ` (${d.date})` : '')
+'Midnight sun: the sun never sets today'|'极昼：太阳今日永不落下'
+`Polar night: civil twilight ${s.times.civilDawn} to ${s.times.civilDusk}`|`极夜：民用暮光 ${s.times.civilDawn} 至 ${s.times.civilDusk}`
+'Polar night: no daylight today'|'极夜：今日没有日照'
+`Sunrise ${s.times.sunrise}, low sun all day: golden light until sunset`|`日出 ${s.times.sunrise}；太阳高度全天较低，黄金光线持续至日落`
+`Sunrise ${s.times.sunrise}, golden hour until ${s.times.goldenDawnEnd}`|`日出 ${s.times.sunrise}；黄金时刻持续至 ${s.times.goldenDawnEnd}`
+`Sunset ${s.times.sunset}`|`日落 ${s.times.sunset}`
+`Golden hour from ${s.times.goldenDuskStart}, sunset ${s.times.sunset}`|`黄金时刻始于 ${s.times.goldenDuskStart}，日落 ${s.times.sunset}`
+`Sun ${s.times.sunrise} to ${s.times.sunset}`|`日出 ${s.times.sunrise} 至日落 ${s.times.sunset}`
+' and '|' 及 '
+' and '|' 及 '
+replace(/-/g, ' to ')|replace(/-/g, ' 至 ')
+`, golden ${golden}`|`，黄金时刻 ${golden}`
+', golden light all day'|'，全天为黄金光线'
+`${dayLabel(d)} is at ${d.anchor.name} (about UTC${fmtOffset(z.estimatedOffset)}), but the trip's pinned zone ${z.pinned} is UTC${fmtOffset(z.pinnedOffset)}: Sundial shows its times in ${z.pinned}`|`${dayLabel(d)} 位于 ${d.anchor.name} (当地约为 UTC${fmtOffset(z.estimatedOffset)})，但行程固定时区 ${z.pinned} 的时差为 UTC${fmtOffset(z.pinnedOffset)}；日晷当前按 ${z.pinned} 显示时刻。`
+`${dayLabel(d)} is marked as a shoot day but has no located stop or stay, so its sun times are unknown`|`${dayLabel(d)} 已标记为摄影日，但没有带坐标的停靠点或住宿地点，因此无法确定太阳时刻。`
+`"${s.name}" starts at ${s.time}, before sunrise (${d.sun.times.sunrise}) on ${dayLabel(d)}`|`“${s.name}”于 ${s.time} 开始，早于${dayLabel(d)}的日出时间 (${d.sun.times.sunrise})。`
+`"${s.name}" starts at ${s.time}, after sunset (${d.sun.times.sunset}) on ${dayLabel(d)}`|`“${s.name}”于 ${s.time} 开始，晚于${dayLabel(d)}的日落时间 (${d.sun.times.sunset})。`
+'no location'|'无地点'
+'midnight sun'|'极昼'
+'polar night'|'极夜'
+'all day'|'全天'
+`Times are shown in ${model.zone.name}.`|`时刻显示所用时区：${model.zone.name}。`
+'Times are shown in a zone estimated from each day\'s longitude; set the trip zone in the Sundial tab for exact local time.'|'时区根据每天的经度估算；如需准确的当地时间，请在日晷标签页设置行程时区。'
+`Golden hour is counted from 4 degrees below the horizon to ${model.settings.goldenAltitude} degrees above it.`|`黄金时刻从太阳高度角低于地平线 4 度开始，至高于地平线 ${model.settings.goldenAltitude} 度结束。`
+title: 'Sun and light'|title: '日照与光线'
+headers: ['Day', 'Date', 'Where', 'Sunrise', 'Golden (am)', 'Golden (pm)', 'Sunset', 'Daylight']|headers: ['天', '日期', '地点', '日出', '黄金时刻 (上午)', '黄金时刻 (下午)', '日落', '日照时长']
+title: 'Shoot days'|title: '摄影日'
+ at ' + d.anchor.name : ''|，地点：' + d.anchor.name : ''
+: ' + d.shoot.note : ''|：' + d.shoot.note : ''
+label: r.note ? `Shoot day: ${r.note}`.slice(0, 60) : 'Shoot day'|label: r.note ? `摄影日：${r.note}`.slice(0, 60) : '摄影日'
+{ label: 'Sun', value: `Midnight sun on ${p.date}` }|{ label: '太阳', value: `极昼，日期：${p.date}` }
+{ label: 'Sun', value: `Polar night on ${p.date}` }|{ label: '太阳', value: `极夜，日期：${p.date}` }
+{ label: 'Sunrise', value: `${t('sunrise')} (${p.date})` }|{ label: '日出', value: `${t('sunrise')} (${p.date})` }
+{ label: 'Golden hour'|{ label: '黄金时刻'
+{ label: 'Golden hour'|{ label: '黄金时刻'
+{ label: 'Blue hour'|{ label: '蓝调时刻'
+{ label: 'Blue hour'|{ label: '蓝调时刻'
+{ label: 'Sunset', value: t('sunset') }|{ label: '日落', value: t('sunset') }
+label: Number(r.n) === 1 ? 'Shoot day' : 'Shoot days'|label: Number(r.n) === 1 ? '摄影日' : '摄影日'

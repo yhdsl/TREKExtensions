@@ -1,0 +1,27 @@
+@AUTHOR=YHDSL
+@TARGET=trek-plugin.json
+@DELIMITER=|
+
+"name": "Sundial"|"name": "日晷"
+"description": "Sunrise, sunset, golden hour and blue hour for every day of your trip, computed from where you will actually be."|"description": "日晷为行程中的每一天计算日出、日落、黄金时刻和蓝调时刻，位置根据当天实际停靠地点确定。"
+"Golden hour ends at sun altitude"|"黄金时刻结束时的太阳高度角"
+"4 degrees (strict)"|"4 度 (严格)"
+"6 degrees (classic)"|"6 度 (标准)"
+"8 degrees"|"8 度"
+"10 degrees (generous)"|"10 度 (宽松)"
+"Golden hour always starts 4 degrees below the horizon; this sets how high the sun may climb before the light is no longer golden."|"黄金时刻始于太阳高度角低于地平线 4 度时；此设置用于指定太阳升高到多少度后，光线不再属于黄金时刻。"
+"Clock"|"时间格式"
+"24-hour"|"24 小时制"
+"12-hour"|"12 小时制"
+"How Sundial writes times in the trip tab, the planner rows, the place panel, the PDF and its assistant tools."|"设置日晷在行程标签页、规划器行、地点面板、PDF 和助手工具中显示时间的格式。"
+"Sunrise, sunset, golden hour and blue hour. Pass tripId (and optionally dayId) for a trip's days, computed from where the traveller will be; or pass date, lat and lng for any place on any date. An IANA zone is honoured in both modes; in trip mode it overrides the trip's pinned zone for this answer only. Any phase the sun never reaches that day is null."|"日出、日落、黄金时刻和蓝调时刻。传入 tripId (也可传入 dayId) 以计算行程各日的时刻，位置取自旅行者当天所在地点；也可传入 date、lat 和 lng，计算任意地点和日期的时刻。两种模式均遵循 IANA 时区；行程模式下，指定时区仅对本次结果覆盖行程固定的时区。太阳当天不会经过的阶段返回 null。"
+"A trip the requesting user can access."|"请求用户有权访问的行程。"
+"One day of that trip; omit for every day."|"该行程中的某一天；省略则返回所有日期。"
+"YYYY-MM-DD, used with lat and lng. Defaults to today."|"YYYY-MM-DD 格式，与 lat 和 lng 配合使用。默认为今天。"
+"IANA time zone for the answer, e.g. Asia/Tokyo. Trip mode: overrides the trip's pinned zone for this answer. Coordinate mode: estimated from the location (a region table, then longitude) when omitted."|"本次结果使用的 IANA 时区，例如 Asia/Tokyo。行程模式下会覆盖行程固定的时区；坐标模式下若省略，则根据地点估算时区 (先查区域表，再按经度估算)。"
+"Sun times"|"太阳时刻"
+"List shoot days"|"列出摄影日"
+"The days of a trip marked for photography, with their sun times and notes."|"列出行程中标记为摄影日的日期、太阳时刻和备注。"
+"Mark a shoot day"|"标记摄影日"
+"Mark or unmark a day of a trip as a photography shoot day, with an optional note. Shared with every member of the trip."|"将行程中的某一天标记为摄影日或取消标记，并可添加备注。所有行程成员均可查看。"
+"true to mark, false to clear."|"true 表示标记，false 表示取消标记。"
