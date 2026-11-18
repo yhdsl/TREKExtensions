@@ -1,0 +1,5 @@
+@AUTHOR=YHDSL
+@TARGET=fieldnotes.json
+@DELIMITER=|
+
+"name": "Fieldnotes"|"name": "笔记"
