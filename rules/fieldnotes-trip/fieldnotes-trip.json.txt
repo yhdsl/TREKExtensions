@@ -1,0 +1,4 @@
+@AUTHOR=YHDSL
+@DELIMITER=|
+@TARGET=fieldnotes-trip.json
+"name": "Trip Fieldnotes"|"name": "旅行笔记"

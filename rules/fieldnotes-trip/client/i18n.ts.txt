@@ -1,0 +1,4 @@
+@AUTHOR=YHDSL
+@DELIMITER=|
+@TARGET=client/i18n.ts
+'Trip Fieldnotes': { zh: 'Trip Fieldnotes'|'Trip Fieldnotes': { zh: '旅行笔记'
