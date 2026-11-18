@@ -1,0 +1,9 @@
+@AUTHOR=YHDSL
+@TARGET=src/server/hooks/pdf-section.ts
+@DELIMITER=|
+
+`This trip is split into ${plural(views.length, 'leg', 'legs')}, covering ${covered} of ${plural(dayCount, 'day', 'days')}.`|`此行程分为 ${plural(views.length, '个行程段', '个行程段')}，覆盖 ${covered}/${plural(dayCount, '天', '天')}。`
+`Days not in any leg: ${rangesToText(gaps)}.`|`未分段日期：${rangesToText(gaps)}。`
+`${plural(drifted.length, 'leg', 'legs')} no longer fit the trip's current length and are shown shortened or omitted.`|`${plural(drifted.length, '个行程段', '个行程段')} 已不符合当前行程长度，显示为已缩短或已隐藏。`
+'not in this trip'|'不在此行程内'
+headers: ['Leg', 'Days', 'Dates', 'Places', 'Stays', 'Bookings']|headers: ['行程段', '天数', '日期', '地点', '住宿', '预订']

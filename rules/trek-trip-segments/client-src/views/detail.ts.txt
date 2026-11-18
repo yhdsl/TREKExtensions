@@ -1,0 +1,31 @@
+@AUTHOR=YHDSL
+@TARGET=client-src/views/detail.ts
+@DELIMITER=|
+
+plural(day.places.length, 'place', 'places')|plural(day.places.length, '个地点', '个地点')
+plural(day.notes.length, 'note', 'notes')|plural(day.notes.length, '条备注', '条备注')
+`Day ${day.pos}`|`第 ${day.pos} 天`
+summary.join(', ') || 'nothing planned'|summary.join('、') || '暂无安排'
+place.name ?? 'Unnamed place'|place.name ?? '未命名地点'
+'Nothing planned for this day.'|'这一天暂无安排。'
+`Day ${booking.fromPos}`|`第 ${booking.fromPos} 天`
+`Day ${booking.toPos}`|`第 ${booking.toPos} 天`
+chip('confirmed'|chip('已确认'
+chip('pending'|chip('待确认'
+chip('also in another leg')|chip('也属于其他行程段')
+plural(stay.nights, 'night', 'nights')|plural(stay.nights, '晚', '晚')
+`in ${stay.checkIn}`|`入住 ${stay.checkIn}`
+`out ${stay.checkOut}`|`退房 ${stay.checkOut}`
+stay.placeName ?? 'Stay'|stay.placeName ?? '住宿'
+'This leg is outside the trip.'|'此行程段已超出行程范围。'
+title: 'Reveal booking code'|title: '显示预订编号'
+'aria-label': `Reveal booking code ${code}`|'aria-label': `显示预订编号 ${code}`
+button('Close'|button('关闭'
+'Collapse this leg'|'收起此行程段'
+'Loading this leg...'|'正在加载此行程段...'
+section('Schedule'|section('日程'
+'No days in this leg.'|'此行程段没有日期。'
+section('Bookings'|section('预订'
+'No bookings fall inside these days.'|'这些日期内没有预订。'
+section('Stays'|section('住宿'
+'No stays overlap these days.'|'这些日期内没有住宿安排。'

@@ -1,0 +1,5 @@
+@AUTHOR=YHDSL
+@TARGET=client-src/views/strip.ts
+@DELIMITER=|
+
+label: `${view.name} - ${segmentRangeLabel(view.effStart, view.effEnd, view.startDate, view.endDate)}`|label: `${view.name} - ${segmentRangeLabel(view.effStart, view.effEnd, view.startDate, view.endDate)}`

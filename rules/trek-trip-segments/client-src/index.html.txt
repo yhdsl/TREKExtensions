@@ -1,0 +1,6 @@
+@AUTHOR=YHDSL
+@TARGET=client-src/index.html
+@DELIMITER=|
+
+<html lang="en">|<html lang="zh-CN">
+<title>Trip Segments</title>|<title>行程分段</title>

@@ -1,0 +1,14 @@
+@AUTHOR=YHDSL
+@TARGET=src/shared/format.ts
+@DELIMITER=|
+
+['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']|['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月']
+'January', 'February', 'March', 'April', 'May', 'June',|'1月', '2月', '3月', '4月', '5月', '6月',
+'July', 'August', 'September', 'October', 'November', 'December',|'7月', '8月', '9月', '10月', '11月', '12月',
+['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']|['一', '二', '三', '四', '五', '六', '日']
+return from === to ? `Day ${from}` : `Day ${from}${EN_DASH}${to}`|return from === to ? `第 ${from} 天` : `第 ${from}${EN_DASH}${to} 天`
+return from === to ? `Day ${from}` : `Days ${from}${EN_DASH}${to}`|return from === to ? `第 ${from} 天` : `第 ${from}${EN_DASH}${to} 天`
+return `${MONTHS_LONG[month1 - 1] ?? ''} ${year}`|return `${MONTHS_LONG[month1 - 1] ?? ''} ${year}年`
+return month ? `${month} ${Number(m[3])}` : null|return month ? `${month} ${Number(m[3])}日` : null
+return `${a} ${EN_DASH} ${b}`|return `${a} ${EN_DASH} ${b}`
+return stripped.length > 0 ? stripped : `Leg ${index + 1}`|return stripped.length > 0 ? stripped : `行程段 ${index + 1}`

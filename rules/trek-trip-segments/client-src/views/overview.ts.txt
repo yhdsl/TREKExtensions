@@ -1,0 +1,23 @@
+@AUTHOR=YHDSL
+@TARGET=client-src/views/overview.ts
+@DELIMITER=|
+
+chip('shortened'|chip('已缩短'
+`Days ${view.start_day}-${view.end_day}, no longer in this trip`|`第 ${view.start_day}-${view.end_day} 天，已超出当前行程`
+'chip('outside the trip'|chip('超出行程范围'
+plural(c.places, 'place', 'places')|plural(c.places, '个地点', '个地点')
+plural(c.bookings, 'booking', 'bookings')|plural(c.bookings, '个预订', '个预订')
+plural(c.stays, 'stay', 'stays')|plural(c.stays, '处住宿', '处住宿')
+`Days ${view.start_day}-${view.end_day}, no longer in this trip`|`第 ${view.start_day}-${view.end_day} 天，已超出当前行程`
+button(isOpen ? 'Hide' : 'Details'|button(isOpen ? '收起' : '详情'
+button('Edit'|button('编辑'
+button('Delete'|button('删除'
+text: `${plural(days, 'day is', 'days are')} not in any leg: ${rangesToText(data.uncovered)}.`|text: `${days} 天未分段：${rangesToText(data.uncovered)}。`
+plural(bookings, 'booking', 'bookings')|plural(bookings, '个预订', '个预订')
+plural(stays, 'stay', 'stays')|plural(stays, '处住宿', '处住宿')
+'No legs yet'|'暂无行程段'
+'Add some days to the trip first, then split them into legs.'|'请先为行程添加日期，再拆分为多个行程段。'
+text: `${parts.join(' and ')} ${one ? 'is' : 'are'} not attached to a day, so ${one ? 'it' : 'they'} cannot belong to any leg.`|text: `${parts.join('、')} 未关联日期，因此无法归入任何行程段。`
+'Split this trip into legs to see its schedule, bookings and stays one destination at a time.'|'将此行程拆分为多个行程段，按目的地查看日程、预订和住宿。'
+button('Add the first leg'|button('添加第一个行程段'
+'Not in any leg'|'未分段'

@@ -1,0 +1,5 @@
+@AUTHOR=YHDSL
+@TARGET=src/server/hooks/map-layer.ts
+@DELIMITER=|
+
+name: 'Trip segments'|name: '行程分段'

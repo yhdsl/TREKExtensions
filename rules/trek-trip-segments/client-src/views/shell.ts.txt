@@ -1,0 +1,14 @@
+@AUTHOR=YHDSL
+@TARGET=client-src/views/shell.ts
+@DELIMITER=|
+
+tab('calendar', 'Calendar')|tab('calendar', '日历')
+tab('list', 'List')|tab('list', '列表')
+plural(data.segments.length, 'leg', 'legs')|plural(data.segments.length, '行程段', '行程段')
+plural(data.dayCount, 'day', 'days')|plural(data.dayCount, '天', '天')
+if (uncoveredDays > 0) facts.push(`${uncoveredDays} not in a leg`);|if (uncoveredDays > 0) facts.push(`${uncoveredDays} 天未分段`);
+data.trip.title ?? 'This trip'|data.trip.title ?? '此行程'
+button('Add leg'|button('添加行程段'
+`A trip can have at most ${MAX_SEGMENTS_PER_TRIP} legs.`|`一个行程最多可有 ${MAX_SEGMENTS_PER_TRIP} 个行程段。`
+'Loading legs...'|'正在加载行程段...'
+'No trip data available.'|'没有可用的行程数据。'

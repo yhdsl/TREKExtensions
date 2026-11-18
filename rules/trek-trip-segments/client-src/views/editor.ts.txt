@@ -1,0 +1,21 @@
+@AUTHOR=YHDSL
+@TARGET=client-src/views/editor.ts
+@DELIMITER=|
+
+'Give this leg a name.'|'请为此行程段命名。'
+`Keep the name under ${NAME_MAX} characters.`|`名称不能超过 ${NAME_MAX} 个字符。`
+'Pick a valid colour.'|'请选择有效的颜色。'
+'The last day has to be on or after the first day.'|'结束日不能早于起始日。'
+'That is past the last day of the trip.'|'所选日期超出行程结束日。'
+'Those days already belong to another leg.'|'这些日期已属于其他行程段。'
+`A trip can have at most ${MAX_SEGMENTS_PER_TRIP} legs.`|`一个行程最多可有 ${MAX_SEGMENTS_PER_TRIP} 个行程段。`
+`Day ${day.pos}`|`第 ${day.pos} 天`
+attrs: { type: 'color', 'aria-label': 'Custom colour', title: 'Choose a custom colour' }|attrs: { type: 'color', 'aria-label': '自定义颜色', title: '自定义颜色' }
+button(isCreate ? 'Add leg' : 'Save'|button(isCreate ? '添加行程段' : '保存'
+isCreate ? 'New leg' : 'Edit leg'|isCreate ? '新建行程段' : '编辑行程段'
+text: 'Name'|text: '分段标题'
+text: 'Colour'|text: '颜色'
+el('span', { text: 'Custom' })|el('span', { text: '自定义' })
+text: 'First day'|text: '起始日'
+text: 'Last day'|text: '结束日'
+button('Cancel'|button('取消'

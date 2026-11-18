@@ -1,0 +1,16 @@
+@AUTHOR=YHDSL
+@TARGET=trek-plugin.json
+@DELIMITER=|
+
+"Trip Segments"|"行程分段"
+"Day tint"|"日期着色"
+"Which parts of a day get the leg colour. Applies next time you open a trip. On phones only the day chip is tinted, so only \"No tint\" looks different there."|"选择行程段颜色应用于日期的哪些部分。下次打开行程时生效。手机上仅日期徽标会着色，因此只有 \"不着色\" 看起来不同。"
+"Whole day"|"全天着色"
+"Header and badge"|"标题栏和徽标"
+"Badge only"|"仅徽标着色"
+"No tint (also hides the leg-name tooltip)"|"不着色，也会隐藏行程段名称提示"
+"Map lines"|"地图线路"
+"What each leg's line on the trip map connects. Applies next time you open a trip."|"选择行程地图上每条行程段线路连接的内容。下次打开行程时生效。"
+"Stops and each night's stay"|"停靠点和每晚住宿"
+"Planned stops only"|"仅计划停靠点"
+"No lines"|"不显示线路"

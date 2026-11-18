@@ -1,0 +1,7 @@
+@AUTHOR=YHDSL
+@TARGET=src/server/hooks/day-schedule.ts
+@DELIMITER=|
+
+`${safeLabel(view.name, view.index)} begins - leg ${i + 1} of ${total}, ${plural(view.effLength, 'day', 'days')}`|`${safeLabel(view.name, view.index)} 开始 - 第 ${i + 1}/${total} 个行程段，共 ${plural(view.effLength, '天', '天')}`
+label: `${safeLabel(view.name, view.index)} ends`|label: `${safeLabel(view.name, view.index)} 结束`
+`${safeLabel(view.name, view.index)} ends`|`${safeLabel(view.name, view.index)} 结束`

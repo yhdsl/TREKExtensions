@@ -1,0 +1,12 @@
+@AUTHOR=YHDSL
+@TARGET=client-src/views/calendar.ts
+@DELIMITER=|
+
+segment ? segment.name : 'Not in any leg'|segment ? segment.name : '未分段'
+`Day ${cell.pos}`|`第 ${cell.pos} 天`
+el('span', { class: 'seg-cal-pos', text: `D${cell.pos}` })|el('span', { class: 'seg-cal-pos', text: `第${cell.pos}天` })
+plural(cell.day.assignmentCount, 'place', 'places')|plural(cell.day.assignmentCount, '个地点', '个地点')
+title: `Open ${view.name}`|title: `打开 ${view.name}`
+`${view.effLength}d`|`${view.effLength} 天`
+'This trip has no dates yet, so days are shown by number.'|'此行程尚无日期，当前按天数显示。'
+'This trip has no days yet.'|'此行程尚无日期。'

@@ -1,0 +1,6 @@
+@AUTHOR=YHDSL
+@TARGET=src/server/hooks/trip-card.ts
+@DELIMITER=|
+
+plural(names.length, 'leg', 'legs')|plural(names.length, '行程段', '行程段')
+plural(names.length, 'leg', 'legs')|plural(names.length, '行程段', '行程段')
