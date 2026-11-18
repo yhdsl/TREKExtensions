@@ -1,0 +1,20 @@
+@AUTHOR=YHDSL
+@TARGET=trek-plugin.json
+@DELIMITER=|
+
+"name": "找地方"|"name": "高德地图"
+"description": "在 TREK 里直接搜遍高德地图——餐厅、景点、宝藏小店都能找，一键复制详情或添加进当前行程，坐标/地图链接/电话自动带上。Search Amap POIs inside TREK & add them to your trip in one click."|"description": "在 TREK 中搜索高德地图地点，可复制地点信息或添加到当前行程，并自动填写坐标、地图链接和电话。"
+"label": "高德 Web 服务 Key"|"label": "高德 Web 服务 API Key"
+"placeholder": "申请自 console.amap.com（Web服务类型）"|"placeholder": "请在 console.amap.com 申请 Web 服务类型的 Key"
+"label": "修复坐标：每批并发请求数"|"label": "坐标校正：每批并发请求数"
+"label": "1（串行，最稳）"|"label": "1 (逐个请求，最稳妥)"
+"label": "5（最快，需高德 Key 配额充裕）"|"label": "5 (最快，需有充足的高德 Key 调用额度)"
+"label": "3（默认）"|"label": "3 (默认)"
+"label": "5000m（默认）"|"label": "5000m (默认)"
+"hint": "数值越大扫描越快，但会同时发更多请求给高德——如果 Key 触发限流就调低"|"hint": "并发数越高，扫描越快，但同时发送给高德的请求也越多。若 Key 触发限流，请调低并发数"
+"label": "修复坐标：优先按原坐标周边搜索"|"label": "坐标校正：优先在原坐标附近搜索"
+"label": "开启（默认）——围绕地点原坐标搜索"|"label": "开启 (默认) - 在地点原坐标附近搜索"
+"label": "关闭——只按名称搜索"|"label": "关闭 - 仅按名称搜索"
+"hint": "防止同名地点（连锁店、跨区同名点）被匹配错——地点已有坐标时围绕原坐标就近搜索"|"hint": "避免误匹配同名地点，例如连锁店或不同城区的同名地点。已有坐标时会优先搜索原坐标附近"
+"label": "修复坐标：周边搜索半径（米）"|"label": "坐标校正：周边搜索半径 (米)"
+"hint": "仅在上方开关开启时生效。半径内搜不到匹配结果的地点会跳过，不猜测坐标"|"hint": "仅在上方开关开启时生效。半径内找不到匹配结果的地点将跳过，不会猜测坐标"
