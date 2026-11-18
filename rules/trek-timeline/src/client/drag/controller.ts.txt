@@ -1,0 +1,5 @@
+@AUTHOR=YHDSL
+@TARGET=src/client/drag/controller.ts
+@DELIMITER=|
+
+Move cancelled.|已取消移动。

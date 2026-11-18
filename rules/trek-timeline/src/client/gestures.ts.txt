@@ -1,0 +1,5 @@
+@AUTHOR=YHDSL
+@TARGET=src/client/gestures.ts
+@DELIMITER=|
+
+Moving places needs a newer TREK|移动地点需要更新版本的 TREK

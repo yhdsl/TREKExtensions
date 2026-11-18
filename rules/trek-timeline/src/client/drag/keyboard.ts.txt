@@ -1,0 +1,5 @@
+@AUTHOR=YHDSL
+@TARGET=src/client/drag/keyboard.ts
+@DELIMITER=|
+
+announce('Moving. Use the arrow keys to choose where, Enter to drop, Escape to cancel.');|announce('正在移动。使用方向键选择位置，按 Enter 放置，按 Escape 取消。');

@@ -1,0 +1,13 @@
+@AUTHOR=YHDSL
+@TARGET=src/client/data.ts
+@DELIMITER=|
+
+reorderDays: 'Reorder days?',|'reorderDays': '重新排列日期？',
+moveBooking: 'Move this booking?',|'moveBooking': '移动此预订？',
+moveStay: 'Change this stay?',|'moveStay': '更改此住宿？',
+moveItem: 'Move this item?',|'moveItem': '移动此项目？',
+You can view this trip but not edit it.|你可以查看此行程，但不能编辑。
+Apply this change?|应用此更改？
+confirmLabel: 'Apply',|confirmLabel: '应用',
+cancelLabel: 'Cancel',|cancelLabel: '取消',
+announce(res.impact.summary[0] || 'Saved.')|announce(res.impact.summary[0] || '已保存。')

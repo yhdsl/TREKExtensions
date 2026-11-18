@@ -1,0 +1,12 @@
+@AUTHOR=YHDSL
+@TARGET=src/client/view/tray.ts
+@DELIMITER=|
+
+        title: lock ? null : 'Drag onto a day, or press M to place it with the keyboard',|        title: lock ? null : '拖到某一天，或按 M 键使用键盘安排',
+Unplanned place: |未安排行程的地点：
+Undated booking: |未注明日期的预订：
+  return h('aside', { class: 'ts-tray', 'aria-label': 'Unscheduled' }, [|  return h('aside', { class: 'ts-tray', 'aria-label': '未安排' }, [
+    h('h2', { text: 'Unscheduled' }),|    h('h2', { text: '未安排' }),
+Everything has a day.|所有项目都已安排日期。
+Places|地点
+Bookings|预订

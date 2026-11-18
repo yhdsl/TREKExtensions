@@ -1,0 +1,13 @@
+@AUTHOR=YHDSL
+@TARGET=src/server/warnings.ts
+@DELIMITER=|
+
+`Day ${day.number}${day.date ? ` (${day.date})` : ''}`|`第 ${day.number} 天${day.date ? ` (${day.date})` : ''}`
+`Day ${i + 1}`|`第 ${i + 1} 天`
+No accommodation for the night of ${dayLabel(model, runStart)}.|${dayLabel(model, runStart)} 当晚没有住宿安排。
+No accommodation for ${nights} nights, ${dayLabel(model, runStart)} to ${dayLabel(model, last)}.|${dayLabel(model, runStart)}至${dayLabel(model, last)}共 ${nights} 晚没有住宿安排。
+${stays[i].title} and ${stays[j].title} overlap for ${nights} night${nights === 1 ? '' : 's'} from ${dayLabel(model, from)}.|${stays[i].title} 与 ${stays[j].title} 从 ${dayLabel(model, from)} 起有 ${nights} 晚住宿时间重叠。
+${t.title} arrives at ${t.arr.time}, after check-in at ${stay.title} closes (${stay.checkInEnd}).|${t.title} 于 ${t.arr.time} 抵达，晚于 ${stay.title} 的入住截止时间 (${stay.checkInEnd})。
+${b.title} is dated ${date}, outside the trip (${range.first} to ${range.last}).|${b.title} 的日期为 ${date}，不在行程日期范围内 (${range.first} 至 ${range.last})。
+${title} is on Day ${day.number} (${day.date}) but the booking says ${date}.|${title} 安排在第 ${day.number} 天 (${day.date})，但预订日期为 ${date}。
+Nothing planned on ${dayLabel(model, d.index)}.|${dayLabel(model, d.index)} 没有安排。

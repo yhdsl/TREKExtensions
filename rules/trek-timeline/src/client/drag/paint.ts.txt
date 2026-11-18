@@ -1,0 +1,16 @@
+@AUTHOR=YHDSL
+@TARGET=src/client/drag/paint.ts
+@DELIMITER=|
+
+  return nights + ' night' + (nights === 1 ? '' : 's');|  return nights + ' 晚';
+  return d ? (d.date ? fmtDay(d.date) : 'Day ' + d.number) : '';|  return d ? (d.date ? fmtDay(d.date) : '第 ' + d.number + ' 天') : '';
+    'In ' +|    '入住 ' +
+    '  →  out ' +|    '  →  退房 ' +
+    b.time +
+    ' · ' +|    ' · ' +
+    nightsText(d.target.span)
+  let text = 'Departs '|  let text = '出发：'
+    text += '  →  arrives '|    text += '  →  抵达：'
+        (d.type === 'item' ? ', position ' + (d.target.pos + 1) : '')|        (d.type === 'item' ? '，位置 ' + (d.target.pos + 1) : '')
+        (targetValid(d) ? '' : ', not allowed'),|        (targetValid(d) ? '' : '，不允许此操作'),
+    announce('Before ' + (days[d.target.gap] ? dayName(days[d.target.gap]) : 'the end'));|    announce('移至' + (days[d.target.gap] ? dayName(days[d.target.gap]) + '之前' : '末尾'));

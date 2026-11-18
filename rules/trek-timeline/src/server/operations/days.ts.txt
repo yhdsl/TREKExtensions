@@ -1,0 +1,10 @@
+@AUTHOR=YHDSL
+@TARGET=src/server/operations/days.ts
+@DELIMITER=|
+
+Nothing changes.|没有更改。
+${redated.length} booking${redated.length === 1 ? '' : 's'} get a new date:|${redated.length} 个预订将更改日期：
+Stays change length:|住宿晚数将更改：
+        (d) =>
+          `${d.title || label(d)} becomes day ${newIndex.get(d.id)! + 1}${newDate(d.id) ? ` (${newDate(d.id)})` : ''}.`,|        (d) =>
+          `${d.title || label(d)} 调整为第 ${newIndex.get(d.id)! + 1} 天${newDate(d.id) ? ` (${newDate(d.id)})` : ''}。`,

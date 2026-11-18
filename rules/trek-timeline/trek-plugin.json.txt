@@ -1,0 +1,10 @@
+@AUTHOR=YHDSL
+@TARGET=trek-plugin.json
+@DELIMITER=|
+
+"name": "Trek Timeline"|"name": "Trek 时间线"
+"description": "See the whole trip on one timeline: drag stays, transport and plans between days, spot gaps and clashes, and edit stay and transport dates in a spreadsheet grid."|"description": "在一条时间线上查看完整行程：在不同日期间拖动住宿、交通和计划，发现空档与冲突，并在表格中编辑住宿和交通日期。"
+"label": "Flag nights without accommodation"|"label": "标记没有住宿的夜晚"
+"label": "Flag days with nothing planned"|"label": "标记没有安排的日期"
+"label": "Also show these warnings in the trip header"|"label": "同时在行程标题中显示这些提醒"
+"hint": "When off, warnings appear only on the Timeline tab, not across the Plan view."|"hint": "关闭后，提醒仅显示在时间线标签页，不会显示在行程视图中。"

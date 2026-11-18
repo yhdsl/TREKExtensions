@@ -1,0 +1,43 @@
+@AUTHOR=YHDSL
+@TARGET=src/client/view/sheet.ts
+@DELIMITER=|
+
+    ['stays', 'Stays'],|    ['stays', '住宿'],
+    ['transport', 'Transport'],|    ['transport', '交通'],
+  if (model().costs.available) tabs.push(['costs', 'Costs']);|  if (model().costs.available) tabs.push(['costs', '费用']);
+  return h('section', { class: 'ts-sheet', 'aria-label': 'Sheet' }, [|  return h('section', { class: 'ts-sheet', 'aria-label': '表格' }, [
+      text: 'No stays yet. Add accommodation in the Plan tab.',|      text: '还没有住宿。请在“行程”标签页添加住宿。',
+  const head = ['Stay', 'Check-in day', 'Check-out day', 'Nights', 'Check-in', 'Until', 'Check-out', 'Confirmation'];|  const head = ['住宿', '入住日期', '退房日期', '晚数', '入住时间', '截止时间', '退房时间', '确认信息'];
+  if (m.costs.available) head.push('Cost');|  if (m.costs.available) head.push('费用');
+              'Check-in day for ' + s.title,|              '为 ' + s.title + ' 选择入住日期',
+              'Check-out day for ' + s.title,|              '为 ' + s.title + ' 选择退房日期',
+              'aria-label': 'Check-in time',|              'aria-label': '入住时间',
+              'aria-label': 'Check-in until',|              'aria-label': '入住截止时间',
+            cellInput('time', s.checkOut, 'stay-out:' + s.id, edit('check_out'), { 'aria-label': 'Check-out time' }),|            cellInput('time', s.checkOut, 'stay-out:' + s.id, edit('check_out'), { 'aria-label': '退房时间' }),
+              'aria-label': 'Confirmation',|              'aria-label': '确认信息',
+              'placeholder': '—',|              'placeholder': '—',
+              'aria-label': 'Confirmation',|              'aria-label': '确认信息',
+        if (m.costs.available) cells.push(h('td', { class: 'ts-num', text: s.cost ? fmtMoney(s.cost) : '—' }));|        if (m.costs.available) cells.push(h('td', { class: 'ts-num', text: s.cost ? fmtMoney(s.cost) : '—' }));
+      text: 'No transport bookings yet.',|      text: '还没有交通预订。',
+    'Type',|'类型',
+    'Booking',|'预订',
+    'Route',|'路线',
+    'Departs',|'出发日期',
+    'Dep. time',|'出发时间',
+    'Arr. time',|'抵达时间',
+    'In transit',|'途中时长',
+    'Status',|'状态',
+    'Confirmation',|'确认信息',
+  if (m.costs.available) head.push('Cost');|  if (m.costs.available) head.push('费用');
+            'aria-label': 'Status of ' + t.title,|            'aria-label': '预订状态：' + t.title,
+              text: st.charAt(0).toUpperCase() + st.slice(1),|              text: st === 'pending' ? '待确认' : st === 'confirmed' ? '已确认' : st === 'cancelled' ? '已取消' : st,
+              'aria-label': 'Booking title',|              'aria-label': '预订名称',
+              'Departure day for ' + t.title,|              '为 ' + t.title + ' 选择出发日期',
+              'aria-label': 'Departure time (local)',|              'aria-label': '出发时间 (当地时间)',
+              'aria-label': 'Arrival time (local)',|              'aria-label': '抵达时间 (当地时间)',
+              'aria-label': 'Confirmation',|              'aria-label': '确认信息',
+        if (m.costs.available) cells.push(h('td', { class: 'ts-num', text: t.cost ? fmtMoney(t.cost) : '—' }));|        if (m.costs.available) cells.push(h('td', { class: 'ts-num', text: t.cost ? fmtMoney(t.cost) : '—' }));
+      h('div', { class: 'trek-muted', text: 'Trip total' }),|      h('div', { class: 'trek-muted', text: '行程总费用' }),
+          text: fmtMoney(c.unallocated) + ' isn’t tied to a day (no date, booking or planned place).',|          text: fmtMoney(c.unallocated) + ' 未关联到某一天 (没有日期、预订或已安排行程的地点)。',
+        text: 'Costs are read-only here. For a category spreadsheet, try the Budget Table plugin.',|        text: '费用在此处为只读。如需按类别查看表格，请试用 Budget Table 插件。',
+  announce('Showing it in the ' + S.tab + ' sheet.');|  announce('已在“' + S.tab + '”表格中显示。');

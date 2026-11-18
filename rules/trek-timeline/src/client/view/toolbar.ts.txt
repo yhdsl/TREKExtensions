@@ -1,0 +1,15 @@
+@AUTHOR=YHDSL
+@TARGET=src/client/view/toolbar.ts
+@DELIMITER=|
+
+  const noun = { error: 'clash', warning: 'warning', info: 'hint' };|  const noun = { error: '冲突', warning: '提醒', info: '提示' };
+        text: counts[l] + ' ' + noun[l] + (counts[l] === 1 ? '' : l === 'error' ? 'es' : 's'),|        text: noun[l] + ' ' + counts[l],
+  if (!chips.length) chips.push(h('span', { class: 'trek-chip trek-chip--success', text: 'No clashes' }));|  if (!chips.length) chips.push(h('span', { class: 'trek-chip trek-chip--success', text: '无冲突' }));
+    s: 'Narrow days',|    s: '窄日',
+    m: 'Medium days',|    m: '中日',
+    l: 'Wide days',|    l: '宽日',
+    { class: 'ts-seg', role: 'group', 'aria-label': 'Day width' },|    { class: 'ts-seg', role: 'group', 'aria-label': '日期列宽' },
+    h('h1', { text: m.trip.title || 'Trip timeline' }),|    h('h1', { text: m.trip.title || '时间线' }),
+          text: 'Unscheduled' + (trayCount ? ' (' + trayCount + ')' : ''),|          text: '未安排' + (trayCount ? ' (' + trayCount + ')' : ''),
+      text: 'Refresh',|      text: '刷新',
+      title: 'Reload from TREK',|      title: '从 TREK 重新载入',

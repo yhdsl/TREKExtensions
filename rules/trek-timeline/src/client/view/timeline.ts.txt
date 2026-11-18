@@ -1,0 +1,41 @@
+@AUTHOR=YHDSL
+@TARGET=src/client/view/timeline.ts
+@DELIMITER=|
+
++      title: canDrag|      title: canDrag
+      ? 'Drag to reorder days, or press M to move with the keyboard'|      ? '拖动可重新排列日期，或按 M 键使用键盘移动'
+      : 'Reordering days needs a newer TREK',|      : '重新排列日期需要更新版本的 TREK',
+            'DAY ' + d.number,|            '第 ' + d.number + ' 天',
+          'aria-label': 'Plan for ' + dayName(d),|          'aria-label': '行程安排：' + dayName(d),
+  const rows = [row('', heads, 'ts-row--head'), row('Stays', stayLane), row('Transport', trLane), row('Plan', plan)];|  const rows = [row('', heads, 'ts-row--head'), row('住宿', stayLane), row('交通', trLane), row('行程', plan)];
+  if (m.costs.available) rows.push(row('Costs', costs));|  if (m.costs.available) rows.push(row('费用', costs));
+    { class: 'ts-timeline', role: 'region', 'aria-label': 'Trip timeline' },|    { class: 'ts-timeline', role: 'region', 'aria-label': '时间线' },
+  const nights = s.nights + ' night' + (s.nights === 1 ? '' : 's');|  const nights = s.nights + ' 晚';
+        (s.checkIn ? ' · in ' + s.checkIn : '') +|        (s.checkIn ? ' · 入住 ' + s.checkIn : '') +
+        (s.checkOut ? ' · out ' + s.checkOut : '') +|        (s.checkOut ? ' · 退房 ' + s.checkOut : '') +
+        '\nClick to open it in the sheet.' +|        '\n点击可在表格中打开。' +
+          ? '\nDrag to change days and times (hold Shift for whole days). Drag an edge for check-in or check-out.' +|          ? '\n拖动可更改日期和时间 (按住 Shift 可按整天移动)。拖动边缘可调整入住或退房时间。' +
+            '\nKeyboard: M, then arrows for days or , and . for 15 minutes (Shift = check-out, Alt = check-in).'|            '\n键盘操作：按 M 后用方向键调整日期，按 , 或 . 以 15 分钟为单位调整时间 (Shift 调整退房，Alt 调整入住)。'
+      'aria-label': 'Stay: ' + s.title + ', ' + nights,|      'aria-label': '住宿：' + s.title + '，' + nights,
+  flight: 'Flight',|  flight: '航班',
+  train: 'Train',|  train: '火车',
+  bus: 'Bus',|  bus: '巴士',
+  car: 'Car',|  car: '汽车',
+  rental_car: 'Rental car',|  rental_car: '租车',
+  ferry: 'Ferry',|  ferry: '渡轮',
+  cruise: 'Cruise',|  cruise: '邮轮',
+  transfer: 'Transfer',|  transfer: '接驳',
+  taxi: 'Taxi',|  taxi: '出租车',
+  transport: 'Transport',|  transport: '交通',
+        (dur ? ' · ' + dur + ' in transit' : '') +|        (dur ? ' · ' + dur + ' 途中' : '') +
+        (t.crossesTimezones ? ' (local times)' : '') +|        (t.crossesTimezones ? '(当地时间)' : '') +
+        (t.durationKnown ? '' : '\nArrival unknown: width is an estimate') +|        (t.durationKnown ? '' : '\n抵达时间未知：宽度为估算值') +
+        '\nClick to open it in the sheet.' +|        '\n点击可在表格中打开。' +
+          ? '\nDrag to change the day and time (hold Shift for whole days). Keyboard: M, then arrows for days or , and . for 15 minutes.'|          ? '\n拖动可更改日期和时间 (按住 Shift 可按整天移动)。键盘操作：按 M 后用方向键调整日期，按 , 或 . 以 15 分钟为单位调整时间。'
+        title: 'Stop: ' + st.name + (st.time ? ' ' + st.time : ''),|        title: '停靠：' + st.name + (st.time ? ' ' + st.time : ''),
+  place: 'Place',|  place: '地点',
+  note: 'Note',|  note: '备注',
+  booking: 'Booking',|  booking: '预订',
+  const lockReason = S.readOnly ? 'View only' : itemLockReason(it.kind);|  const lockReason = S.readOnly ? '只读' : itemLockReason(it.kind);
+        (category ? category.name : it.kind === 'note' ? 'Note' : (it.kind === 'booking' && it.type) || 'Booking'),|        (category ? category.name : it.kind === 'note' ? '备注' : (it.kind === 'booking' && it.type) || '预订'),
+      'aria-label': KIND_LABEL[it.kind] + ': ' + it.title + (it.time ? ' at ' + it.time : ''),|      'aria-label': KIND_LABEL[it.kind] + '：' + it.title + (it.time ? ' ' + it.time : ''),

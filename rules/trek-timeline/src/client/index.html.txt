@@ -1,0 +1,7 @@
+@AUTHOR=YHDSL
+@TARGET=src/client/index.html
+@DELIMITER=|
+
+<html lang="en">|<html lang="zh-CN">
+<title>Trek Timeline</title>|<title>Trek 时间线</title>
+Loading the trip…|正在加载行程…

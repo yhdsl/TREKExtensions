@@ -1,0 +1,10 @@
+@AUTHOR=YHDSL
+@TARGET=src/server/operations/stays.ts
+@DELIMITER=|
+
+summary: ['Nothing changes.']|summary: ['没有更改。']
+${stay.title}: check in ${label(a)}${inTime ? ` at ${inTime}` : ''}, check out ${label(b)}${outTime ? ` at ${outTime}` : ''} (${nights} night${nights === 1 ? '' : 's'}).|${stay.title}：${label(a)}入住${inTime ? `，时间 ${inTime}` : ''}，${label(b)}退房${outTime ? `，时间 ${outTime}` : ''} (共 ${nights} 晚)。
+Was ${stay.nights} night${stay.nights === 1 ? '' : 's'}.|原为 ${stay.nights} 晚。
+Overlaps ${other.title}.|与 ${other.title} 的住宿时间重叠。
+Only TREK changes. The booking with the hotel does not.|仅 TREK 中的记录会更改，酒店预订不会更改。
+Updates ${stay.title}.|更新了 ${stay.title}。

@@ -1,0 +1,12 @@
+@AUTHOR=YHDSL
+@TARGET=src/client/view/agenda.ts
+@DELIMITER=|
+
+text: s.title + ' · night ' + (d.index - s.startIndex + 1) + ' of ' + s.nights|text: s.title + ' · 第 ' + (d.index - s.startIndex + 1) + ' 晚，共 ' + s.nights + ' 晚'
+'Move ' + t.title|'移动 ' + t.title
+'Move ' + it.title|'移动 ' + it.title
+'Nothing planned'|'没有安排'
+'Day ' + d.number|'第 ' + d.number + ' 天'
+'Unscheduled'|'未安排'
+'Plan ' + p.title|'安排 ' + p.title
+'Schedule ' + b.title|'安排 ' + b.title

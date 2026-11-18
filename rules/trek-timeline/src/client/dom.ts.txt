@@ -1,0 +1,5 @@
+@AUTHOR=YHDSL
+@TARGET=src/client/dom.ts
+@DELIMITER=|
+
+'Day ' + d.number|'第 ' + d.number + ' 天'

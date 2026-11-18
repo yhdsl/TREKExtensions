@@ -1,0 +1,9 @@
+@AUTHOR=YHDSL
+@TARGET=src/server/operations/items.ts
+@DELIMITER=|
+
+Reorders ${item.title} within ${label(to)}.|在${label(to)}重新排列了 ${item.title}。
+Moves ${item.title} from ${label(from)} to ${label(to)}.|将 ${item.title} 从${label(from)}移动到${label(to)}。
+Reorders the note within ${label(to)}.|在${label(to)}重新排列了备注。
+Moves the note "${item.title}" to ${label(to)}.|将备注“${item.title}”移动到${label(to)}。
+summary: [`Adds ${place.name || 'the place'} to ${label(day)}.`]|summary: [`将${place.name || '该地点'}添加到${label(day)}。`]

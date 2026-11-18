@@ -1,0 +1,5 @@
+@AUTHOR=YHDSL
+@TARGET=src/client/view/controls.ts
+@DELIMITER=|
+
+Move to…|移动到…

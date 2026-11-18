@@ -1,0 +1,16 @@
+@AUTHOR=YHDSL
+@TARGET=src/client/view/index.ts
+@DELIMITER=|
+
++text: 'Loading the trip…'|text: '正在加载行程…'
+Open a trip to see its timeline.|打开一个行程以查看时间线。
+Could not load this trip: |无法加载此行程：
+Try again|重试
+This trip has no days yet. Add dates or days in the Plan tab.|此行程还没有日期。请在“行程”标签页添加日期或天数。
+View only. |只读。
+You don’t have permission to edit this trip.|你没有编辑此行程的权限。
+Some moves need a newer TREK. |部分移动操作需要更新版本的 TREK。
+Reordering days and moving places or notes between days aren’t available to plugins yet. |插件暂时无法重新排列日期，也无法在不同日期间移动地点或备注。
+You can already move stays and bookings, reorder notes, and plan from the Unscheduled list.|你仍可移动住宿和预订、重新排列备注，并从“未安排”列表添加行程。
+text: 'Dismiss'|text: '关闭'
+Clashes and gaps|冲突与空档

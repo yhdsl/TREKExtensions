@@ -1,0 +1,13 @@
+@AUTHOR=YHDSL
+@TARGET=src/server/operations/bookings.ts
+@DELIMITER=|
+
+summary: ['Nothing changes.']|summary: ['没有更改。']
+${r.title} would end after the last day of the trip.|${r.title} 的结束日期将晚于行程最后一天。
+Moves ${r.title} from ${fromDay ? label(fromDay) : 'unscheduled'} to ${label(to)}.|将 ${r.title} 从${fromDay ? label(fromDay) : '未安排'}移动到${label(to)}。
+Its dates shift by ${shift > 0 ? '+' : ''}${shift} day${Math.abs(shift) === 1 ? '' : 's'}.|日期将移动 ${shift > 0 ? '+' : ''}${shift} 天。
+Only TREK changes. The booking with the provider does not.|仅 TREK 中的记录会更改，服务提供方处的预订不会更改。
+${r.title} would move outside the trip.|${r.title} 将移出行程日期范围。
+Moves ${r.title} ${delta > 0 ? 'later' : 'earlier'} by ${fmtMinutes(Math.abs(delta))}${oldDep && newDep ? ` (departs ${newDep}, was ${oldDep})` : ''}.|将 ${r.title}${delta > 0 ? '延后' : '提前'} ${fmtMinutes(Math.abs(delta))}${oldDep && newDep ? ` (出发时间 ${newDep}，原为 ${oldDep})` : ''}。
+It now departs ${Math.abs(depDays)} day${Math.abs(depDays) === 1 ? '' : 's'} ${depDays > 0 ? 'later' : 'earlier'}.|现在的出发日期${depDays > 0 ? '推后' : '提前'}了 ${Math.abs(depDays)} 天。
+Updates ${r.title}.|更新了 ${r.title}。
