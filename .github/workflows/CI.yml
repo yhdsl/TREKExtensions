@@ -245,6 +245,12 @@ jobs:
           python ./tool/translator.py ./translate/update/trek-plugin-sundial -r "$GITHUB_WORKSPACE/plugin-sources/sundial/source"
           python ./tool/translator.py ./translate/rules/trek-plugin-sundial -r "$GITHUB_WORKSPACE/plugin-sources/sundial/source"
 
+      - name: Build TREK SDK CLI for Sundial
+        working-directory: ./TREK/plugin-sdk
+        run: |
+          npm ci
+          npm run build
+
       - name: Validate and pack Sundial
         working-directory: ./plugin-sources/sundial/source
         run: |
