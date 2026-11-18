@@ -1,0 +1,356 @@
+name: Build TREK Extensions
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  AmapSearch:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout translate file
+        uses: actions/checkout@v6
+        with:
+          path: './translate'
+
+      - name: Checkout translator tool
+        uses: actions/checkout@v6
+        with:
+          repository: 'yhdsl/Translator-Tool'
+          path: './tool'
+
+      - name: Checkout Amap Search source code
+        uses: actions/checkout@v6
+        with:
+          repository: 'imusic-487/Trek-Amap-search'
+          path: './source'
+
+      - name: Setup Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.14'
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+
+      - name: Run Translator-Tool
+        run: |
+          python ./tool/translator.py ./translate/update/amap-search -r "$GITHUB_WORKSPACE/source"
+          python ./tool/translator.py ./translate/rules/amap-search -r "$GITHUB_WORKSPACE/source"
+
+      - name: Validate and pack Amap Search
+        working-directory: ./source
+        run: |
+          npx --yes trek-plugin-sdk validate
+          npx --yes trek-plugin-sdk pack
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v7
+        with:
+          name: 找地方
+          path: ./source/plugin.zip
+          if-no-files-found: error
+
+  Fieldnotes:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout translate file
+        uses: actions/checkout@v6
+        with:
+          path: './translate'
+
+      - name: Checkout translator tool
+        uses: actions/checkout@v6
+        with:
+          repository: 'yhdsl/Translator-Tool'
+          path: './tool'
+
+      - name: Checkout Fieldnotes source code
+        uses: actions/checkout@v6
+        with:
+          repository: 'Tangerineeew/fieldnotes'
+          path: './source'
+
+      - name: Setup Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.14'
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+
+      - name: Run Translator-Tool
+        run: python ./tool/translator.py ./translate/rules/fieldnotes -r "$GITHUB_WORKSPACE/source/source"
+
+      - name: Build and pack Fieldnotes
+        working-directory: ./source/source
+        run: |
+          npm ci
+          npm run build
+          npx trek-plugin pack dist/fieldnotes --out dist/fieldnotes.zip
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v7
+        with:
+          name: Fieldnotes
+          path: ./source/source/dist/fieldnotes.zip
+          if-no-files-found: error
+
+  FieldnotesTrip:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout translate file
+        uses: actions/checkout@v6
+        with:
+          path: './translate'
+
+      - name: Checkout translator tool
+        uses: actions/checkout@v6
+        with:
+          repository: 'yhdsl/Translator-Tool'
+          path: './tool'
+
+      - name: Checkout Fieldnotes source code
+        uses: actions/checkout@v6
+        with:
+          repository: 'Tangerineeew/fieldnotes'
+          path: './source'
+
+      - name: Setup Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.14'
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+
+      - name: Run Translator-Tool
+        run: python ./tool/translator.py ./translate/rules/fieldnotes-trip -r "$GITHUB_WORKSPACE/source/source"
+
+      - name: Build and pack Fieldnotes Trip
+        working-directory: ./source/source
+        run: |
+          npm ci
+          npm run build
+          npx trek-plugin pack dist/fieldnotes-trip --out dist/fieldnotes-trip.zip
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v7
+        with:
+          name: Trip Fieldnotes
+          path: ./source/source/dist/fieldnotes-trip.zip
+          if-no-files-found: error
+
+  TrekTrack:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout translate file
+        uses: actions/checkout@v6
+        with:
+          path: './translate'
+
+      - name: Checkout translator tool
+        uses: actions/checkout@v6
+        with:
+          repository: 'yhdsl/Translator-Tool'
+          path: './tool'
+
+      - name: Checkout Trek Track source code
+        uses: actions/checkout@v6
+        with:
+          repository: 'fbnlrz/trek-track'
+          path: './source'
+
+      - name: Setup Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.14'
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+
+      - name: Run Translator-Tool
+        run: |
+          python ./tool/translator.py ./translate/update/trek-track -r "$GITHUB_WORKSPACE/source"
+          python ./tool/translator.py ./translate/rules/trek-track -r "$GITHUB_WORKSPACE/source"
+
+      - name: Build and pack Trek Track
+        working-directory: ./source
+        run: |
+          npm install
+          npm run build:airlines
+          npm run validate
+          npm run pack
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v7
+        with:
+          name: Flight Tracker
+          path: ./source/plugin.zip
+          if-no-files-found: error
+
+  Sundial:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout translate file
+        uses: actions/checkout@v6
+        with:
+          path: './translate'
+
+      - name: Checkout translator tool
+        uses: actions/checkout@v6
+        with:
+          repository: 'yhdsl/Translator-Tool'
+          path: './tool'
+
+      - name: Checkout Sundial source code
+        uses: actions/checkout@v6
+        with:
+          repository: 'jubnl/trek-plugin-sundial'
+          path: './plugin-sources/sundial/source'
+
+      - name: Checkout TREK SDK for Sundial
+        uses: actions/checkout@v6
+        with:
+          repository: 'liketrek/TREK'
+          path: './TREK'
+          sparse-checkout: plugin-sdk
+          sparse-checkout-cone-mode: true
+
+      - name: Setup Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.14'
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+
+      - name: Run Translator-Tool
+        run: |
+          python ./tool/translator.py ./translate/update/trek-plugin-sundial -r "$GITHUB_WORKSPACE/plugin-sources/sundial/source"
+          python ./tool/translator.py ./translate/rules/trek-plugin-sundial -r "$GITHUB_WORKSPACE/plugin-sources/sundial/source"
+
+      - name: Validate and pack Sundial
+        working-directory: ./plugin-sources/sundial/source
+        run: |
+          npm install
+          npm run validate
+          npm run pack
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v7
+        with:
+          name: Sundial
+          path: ./plugin-sources/sundial/source/plugin.zip
+          if-no-files-found: error
+
+  Timeline:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout translate file
+        uses: actions/checkout@v6
+        with:
+          path: './translate'
+
+      - name: Checkout translator tool
+        uses: actions/checkout@v6
+        with:
+          repository: 'yhdsl/Translator-Tool'
+          path: './tool'
+
+      - name: Checkout Timeline source code
+        uses: actions/checkout@v6
+        with:
+          repository: 'aangelisc/trek-timeline'
+          path: './source'
+
+      - name: Setup Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.14'
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+
+      - name: Run Translator-Tool
+        run: python ./tool/translator.py ./translate/rules/trek-timeline -r "$GITHUB_WORKSPACE/source"
+
+      - name: Build and pack Timeline
+        working-directory: ./source
+        run: |
+          npm install
+          npm run pack
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v7
+        with:
+          name: TREK Timeline
+          path: ./source/plugin.zip
+          if-no-files-found: error
+
+  TripSegments:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout translate file
+        uses: actions/checkout@v6
+        with:
+          path: './translate'
+
+      - name: Checkout translator tool
+        uses: actions/checkout@v6
+        with:
+          repository: 'yhdsl/Translator-Tool'
+          path: './tool'
+
+      - name: Checkout Trip Segments source code
+        uses: actions/checkout@v6
+        with:
+          repository: 'RenzoBeux/TREK-trip-segments'
+          path: './source'
+
+      - name: Setup Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.14'
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+
+      - name: Run Translator-Tool
+        run: python ./tool/translator.py ./translate/rules/trek-trip-segments -r "$GITHUB_WORKSPACE/source"
+
+      - name: Build and pack Trip Segments
+        working-directory: ./source
+        run: |
+          npm install
+          npm run build
+          npm run validate
+          npm run pack
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v7
+        with:
+          name: Trip Segments
+          path: ./source/plugin.zip
+          if-no-files-found: error
