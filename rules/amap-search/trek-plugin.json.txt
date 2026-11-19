@@ -4,6 +4,7 @@
 
 "name": "找地方"|"name": "高德地图"
 "description": "在 TREK 里直接搜遍高德地图——餐厅、景点、宝藏小店都能找，一键复制详情或添加进当前行程，坐标/地图链接/电话自动带上。Search Amap POIs inside TREK & add them to your trip in one click."|"description": "在 TREK 中搜索高德地图地点，可复制地点信息或添加到当前行程，并自动填写坐标、地图链接和电话。"
+"type": "trip-page",|"type": "trip-page", "capabilities": {"tripPage": {"position": 1}},
 "label": "高德 Web 服务 Key"|"label": "高德 Web 服务 API Key"
 "placeholder": "申请自 console.amap.com（Web服务类型）"|"placeholder": "请在 console.amap.com 申请 Web 服务类型的 Key"
 "label": "修复坐标：每批并发请求数"|"label": "坐标校正：每批并发请求数"

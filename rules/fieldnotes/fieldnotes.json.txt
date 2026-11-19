@@ -3,3 +3,4 @@
 @DELIMITER=|
 
 "name": "Fieldnotes"|"name": "笔记"
+"description": "A private Markdown library for your travel know-how: write it once, bring it into every trip. Pairs with Trip Fieldnotes."|"description": "用于保存旅行经历的私人 Markdown 笔记库：仅需记录一次，便能在每次旅行中使用。可与 旅行笔记 插件搭配使用。"

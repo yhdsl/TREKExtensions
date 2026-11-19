@@ -4,6 +4,7 @@
 
 "name": "Sundial"|"name": "日晷"
 "description": "Sunrise, sunset, golden hour and blue hour for every day of your trip, computed from where you will actually be."|"description": "日晷为行程中的每一天计算日出、日落、黄金时刻和蓝调时刻，位置根据当天实际停靠地点确定。"
+"capabilities": {|"capabilities": {"tripPage": {"position": 11},
 "Golden hour ends at sun altitude"|"黄金时刻结束时的太阳高度角"
 "4 degrees (strict)"|"4 度 (严格)"
 "6 degrees (classic)"|"6 度 (标准)"

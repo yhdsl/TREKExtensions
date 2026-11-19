@@ -2,3 +2,5 @@
 @DELIMITER=|
 @TARGET=fieldnotes-trip.json
 "name": "Trip Fieldnotes"|"name": "旅行笔记"
+"description": "A notes tab in every trip: read and discuss what you share from Fieldnotes, with bookings as cards. Requires Fieldnotes."|"description": "为每次旅行提供笔记标签页，可阅读和讨论从 笔记 插件中共享的笔记内容；。需要安装 笔记 插件。"
+"type": "trip-page",|"type": "trip-page", "capabilities": {"tripPage": {"position": 12}},

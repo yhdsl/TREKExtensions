@@ -62,6 +62,7 @@ couldnt: "Couldn't read a flight number — enter it:"|couldnt: '无法读取航
 keycleared: 'Key removed'|keycleared: '密钥已移除'
 keynotallowed: 'Only a TREK admin can change this key'|keynotallowed: '只有 TREK 管理员可以更改此密钥'
 keyconfig: 'No AeroDataBox key configured — a TREK admin can set it in the plugin configuration to unlock schedule, gate and delay data.'|keyconfig: '尚未配置 AeroDataBox 密钥。TREK 管理员可在插件设置中配置，以启用航班时刻、登机口和延误信息'
+No AeroDataBox key is configured. Without one the widget still shows the live adsb.fi position, but no schedule, gate or delay.|尚未配置 AeroDataBox 密钥。未配置密钥时，小组件仍会显示 adsb.fi 的实时位置，但不会显示航班时刻、登机口或延误信息。
 stale: 'Not updating — retrying'|stale: '更新失败，正在重试'
 throttled: 'Already refreshed a moment ago — showing the cached result'|throttled: '刚刚已刷新，当前显示缓存结果'
 keyrejected: 'The AeroDataBox key was rejected. Schedule, gate and delay data stay unavailable until an admin replaces it — the live position below keeps working.'|keyrejected: 'AeroDataBox 密钥无效。管理员更换密钥前，航班时刻、登机口和延误信息将不可用，但下方实时位置仍可查看'

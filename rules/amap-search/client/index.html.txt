@@ -5,8 +5,6 @@
 <title>找地方</title>|<title>高德地图</title>
 🗺️ 找地方|🗺️ 高德地图
 title="重新扫描行程已有地点，修复坐标偏移"|title="重新扫描行程中的地点，检查并校正坐标"
-🛠️ 修复坐标|🛠️ 检查并校正坐标
-🛠️ 修复坐标|🛠️ 检查并校正坐标
 placeholder="搜索关键词，如：故宫 / 长城 / 西湖"|placeholder="搜索地点，例如：故宫 / 长城 / 西湖"
 💡 城市自动识别可手动改 · 搜索后可按类型筛选、按评分排序 · 添加后高德链接自动存入「网站」|💡 城市会自动识别，也可手动修改。搜索后可按分类筛选或按评分排序。添加地点时，高德地图链接会保存到「网站」字段。
 <span style="font-size:11px; opacity:0.7; flex:none">类型</span>|<span style="font-size:11px; opacity:0.7; flex:none">分类</span>
@@ -58,13 +56,7 @@ title="高德匹配名称差异较大——应用前请仔细核对">❓ 低置�
 高德匹配: ${esc(r.candidateName)}|高德匹配地点：${esc(r.candidateName)}
 ✅ 所有已检查地点与高德一致，无需修复|✅ 已检查的地点坐标均与高德地图一致，无需校正
 发现 ${coordFixResults.length} 个地点坐标可能偏移。应用前请核对——名称匹配不确定的默认不勾选|发现 ${coordFixResults.length} 个地点的坐标可能有偏差。应用前请仔细核对，名称匹配不确定的地点默认不会勾选。
-<button id="coord-fix-apply" class="trek-btn trek-btn--primary" style="flex:1">应用所选</button>|<button id="coord-fix-apply" class="trek-btn trek-btn--primary" style="flex:1">校正所选地点</button>
-<span class="btn-label">应用中</span>|<span class="btn-label">正在校正</span>
-`已修复 ${res.updated} 个地点`|`已校正 ${res.updated} 个地点的坐标`
 trek.notify('warning', `${res.errors.length} 个地点更新失败`)|trek.notify('warning', `${res.errors.length} 个地点坐标校正失败`)
-applyBtn.innerHTML = '应用所选'|applyBtn.innerHTML = '校正所选地点'
-applyBtn.innerHTML = '应用所选'|applyBtn.innerHTML = '校正所选地点'
-applyBtn.disabled = false; applyBtn.innerHTML = '应用所选'|applyBtn.disabled = false; applyBtn.innerHTML = '校正所选地点'
 addBtn.disabled = false; addBtn.innerHTML = `<span class="btn-icon">${ICON_ADD}</span><span class="btn-label">添加进行程</span>`; addBtn.setAttribute('aria-label', '添加进行程')|addBtn.disabled = false; addBtn.innerHTML = `<span class="btn-icon">${ICON_ADD}</span><span class="btn-label">添加到行程</span>`; addBtn.setAttribute('aria-label', '添加到行程')
 addBtn.disabled = false; addBtn.innerHTML = `<span class="btn-icon">${ICON_ADD}</span><span class="btn-label">添加进行程</span>`; addBtn.setAttribute('aria-label', '添加进行程')|addBtn.disabled = false; addBtn.innerHTML = `<span class="btn-icon">${ICON_ADD}</span><span class="btn-label">添加到行程</span>`; addBtn.setAttribute('aria-label', '添加到行程')
 trek.notify('info', '已自动识别城市：' + cityInput.value + '，如不正确请更改')|trek.notify('info', '已自动识别城市：' + cityInput.value + '。如有误，请手动修改。')
@@ -72,7 +64,6 @@ cityInput.placeholder = res.city + '（自动识别，可修改）'|cityInput.pl
 cityInput.placeholder = '未识别到城市，可手动填写'|cityInput.placeholder = '未能自动识别城市，请手动填写'
 if (filterActive) btns.push('<button class="trek-btn trek-btn--secondary" id="btn-clear-filter">清除筛选</button>')|if (filterActive) btns.push('<button class="trek-btn trek-btn--secondary" id="btn-clear-filter">清除筛选条件</button>')
 trek.notify('success', `已添加「${poi.name}」到行程`)|trek.notify('success', `已将「${poi.name}」添加到行程`)
-addBtn.setAttribute('aria-label', '添加中')|addBtn.setAttribute('aria-label', '正在添加')
 applyBtn.disabled = false; applyBtn.innerHTML = '应用所选'|applyBtn.disabled = false; applyBtn.innerHTML = '校正所选地点'
 `正在扫描行程地点…`|`正在扫描行程中的地点…`
 `(${Math.min(offset, total)}/${total})`|`(${Math.min(offset, total)} / ${total})`

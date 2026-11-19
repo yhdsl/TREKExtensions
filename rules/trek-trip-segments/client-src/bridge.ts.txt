@@ -1,3 +1,0 @@
-@AUTHOR=YHDSL
-@TARGET=client-src/bridge.ts
-@DELIMITER=|

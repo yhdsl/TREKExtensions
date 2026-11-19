@@ -3,6 +3,8 @@
 @DELIMITER=|
 
 "Trip Segments"|"行程分段"
+"position": 1|"position": 2
+"description": "Split long multi-destination trips into colour-coded legs, with a per-leg view of the schedule, bookings and stays."|"description": "将多目的地长途行程划分为多彩行程段，并按行程段分别查看日程、预订和住宿。"
 "Day tint"|"日期着色"
 "Which parts of a day get the leg colour. Applies next time you open a trip. On phones only the day chip is tinted, so only \"No tint\" looks different there."|"选择行程段颜色应用于日期的哪些部分。下次打开行程时生效。手机上仅日期徽标会着色，因此只有 \"不着色\" 看起来不同。"
 "Whole day"|"全天着色"
