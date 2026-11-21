@@ -49,7 +49,7 @@ add('set',|add('日落',
 add('twilight', t.civilDawn ? t.civilDawn + ' – ' + t.civilDusk : 'none'|add('暮光', t.civilDawn ? t.civilDawn + ' – ' + t.civilDusk : '无'
 '  ·  golden to '|'  ·  黄金时刻结束于 '
 '  ·  golden light all day'|'  ·  全天为黄金光线'
-'  ·  golden from '|'  ·  黄金时刻始于 '
+'  ·  golden from '|'  ·  黄金时刻开始于 '
 add('blue', [rng(t.civilDawn, t.blueDawnEnd), rng(t.blueDuskStart, t.civilDusk)].filter(Boolean).join('  ·  ') || 'none'|add('蓝调时刻', [rng(t.civilDawn, t.blueDawnEnd), rng(t.blueDuskStart, t.civilDusk)].filter(Boolean).join('  ·  ') || '无'
 add('light', s.dayLength)|add('日照时长', s.dayLength)
 text: d.reason === 'no-date' ? 'No date on this day. ' : 'Nowhere to compute from yet. '|text: d.reason === 'no-date' ? '这一天尚无日期。' : '尚无可用于计算的位置。'
