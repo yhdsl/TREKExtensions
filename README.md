@@ -9,5 +9,4 @@
 - [Trip Fieldnotes - V0.3.4](https://github.com/Tangerineeew/fieldnotes-trip)
 - [Flight Tracker - V2.0.0](https://github.com/fbnlrz/trek-track)
 - [Sundial - V1.3.0](https://github.com/jubnl/trek-plugin-sundial)
-- [TREK Timeline - V0.2.0](https://github.com/aangelisc/trek-timeline)
 - [Trip Segments - V1.3.1](https://github.com/RenzoBeux/TREK-trip-segments)

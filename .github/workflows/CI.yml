@@ -265,53 +265,6 @@ jobs:
           path: ./plugin-sources/sundial/source/plugin.zip
           if-no-files-found: error
 
-  Timeline:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout translate file
-        uses: actions/checkout@v6
-        with:
-          path: './translate'
-
-      - name: Checkout translator tool
-        uses: actions/checkout@v6
-        with:
-          repository: 'yhdsl/Translator-Tool'
-          path: './tool'
-
-      - name: Checkout Timeline source code
-        uses: actions/checkout@v6
-        with:
-          repository: 'aangelisc/trek-timeline'
-          path: './source'
-
-      - name: Setup Python
-        uses: actions/setup-python@v6
-        with:
-          python-version: '3.14'
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v6
-        with:
-          node-version: '24'
-
-      - name: Run Translator-Tool
-        run: python ./tool/translator.py ./translate/rules/trek-timeline -r "$GITHUB_WORKSPACE/source"
-
-      - name: Build and pack Timeline
-        working-directory: ./source
-        run: |
-          npm install
-          npm run pack
-
-      - name: Upload artifact
-        uses: actions/upload-artifact@v7
-        with:
-          name: TREK Timeline
-          path: ./source/plugin.zip
-          if-no-files-found: error
-
   TripSegments:
     runs-on: ubuntu-latest
 
