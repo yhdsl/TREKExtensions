@@ -7,9 +7,9 @@
 `Polar night: civil twilight ${s.times.civilDawn} to ${s.times.civilDusk}`|`极夜：民用暮光 ${s.times.civilDawn} 至 ${s.times.civilDusk}`
 'Polar night: no daylight today'|'极夜：今日没有日照'
 `Sunrise ${s.times.sunrise}, low sun all day: golden light until sunset`|`日出 ${s.times.sunrise}；太阳高度全天较低，黄金光线持续至日落`
-`Sunrise ${s.times.sunrise}, golden hour until ${s.times.goldenDawnEnd}`|`日出 ${s.times.sunrise}；黄金时刻持续至 ${s.times.goldenDawnEnd}`
+`Sunrise ${s.times.sunrise}, golden hour until ${s.times.goldenDawnEnd}`|`日出 ${s.times.sunrise}；持续至 ${s.times.goldenDawnEnd}`
 `Sunset ${s.times.sunset}`|`日落 ${s.times.sunset}`
-`Golden hour from ${s.times.goldenDuskStart}, sunset ${s.times.sunset}`|`黄金时刻始于 ${s.times.goldenDuskStart}，日落 ${s.times.sunset}`
+`Golden hour from ${s.times.goldenDuskStart}, sunset ${s.times.sunset}`|`日落 ${s.times.goldenDuskStart}，持续至 ${s.times.sunset}`
 `Sun ${s.times.sunrise} to ${s.times.sunset}`|`日出 ${s.times.sunrise} 至日落 ${s.times.sunset}`
 ' and '|' 及 '
 ' and '|' 及 '

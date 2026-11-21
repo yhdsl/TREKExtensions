@@ -6,6 +6,8 @@
 <h1 id="title">Sundial</h1>|<h1 id="title">日晷</h1>
 id="subtitle">Sunrise, golden hour and blue hour, wherever each day takes you.|id="subtitle">无论每天前往何处，都能查看日出、黄金时刻和蓝调时刻。
 class="trek-label" for="zone" style="margin:0">Time zone</label>|class="trek-label" for="zone" style="margin:0">时区</label>
+'estimated '|'估算时区：'
+' · from longitude only, pin to be sure'|' · 仅按经度估算，建议固定时区'
 text: 'Automatic (by longitude)'|text: '自动按经度估算'
 'Time zone pinned to ' + sel.value|'时区已固定为 ' + sel.value
 : 'Time zone back to automatic'|: '时区已恢复为自动'
@@ -37,10 +39,13 @@ g.appendChild(svg('title', {})).textContent = 'Day ' + d.number + ' daylight|g.a
 text: 'no located stop or stay'|text: '没有带坐标的停靠点或住宿地点'
 text: 'Day ' + d.number|text: '第 ' + d.number + ' 天'
 title: 'Pin a different zone, or clear it to follow each day\'s longitude'|title: '固定其他时区，或清除设置以按每天的经度估算时区'
+carry: 'carried from the day before'|carry: '沿用前一天的位置'
 text: d.zoneMismatch.pinned + ' clock · locally about ' + offsetLabel(d.zoneMismatch.estimatedOffset)|text: '固定时区 ' + d.zoneMismatch.pinned + '；当地时间约为 ' + offsetLabel(d.zoneMismatch.estimatedOffset)
 add('sun', 'up all day')|add('太阳', '全天可见')
 add('daylight', '24h 00m'|add('日照时长', '24h 00m'
 add('sun', 'below the horizon')|add('太阳', '位于地平线以下')
+add('rise',|add('日出',
+add('set',|add('日落',
 add('twilight', t.civilDawn ? t.civilDawn + ' – ' + t.civilDusk : 'none'|add('暮光', t.civilDawn ? t.civilDawn + ' – ' + t.civilDusk : '无'
 '  ·  golden to '|'  ·  黄金时刻结束于 '
 '  ·  golden light all day'|'  ·  全天为黄金光线'
