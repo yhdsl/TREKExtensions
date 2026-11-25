@@ -1,0 +1,15 @@
+@AUTHOR=YHDSL
+@TARGET=src/server/mcp-tools.ts
+@DELIMITER=|
+
+'The TREK trip id. The calling user must be a member of the trip.'|'TREK 行程 ID。当前调用用户必须是该行程的成员。'
+'The segment id returned by list_trip_segments.'|'list_trip_segments 返回的行程段 ID。'
+'A short destination or leg name, such as Tokyo or Patagonia.'|'简短的目的地或行程段名称，例如东京或巴塔哥尼亚。'
+'The segment colour as #rrggbb. Presets include #4F46E5, #10B981, #F59E0B and #EF4444.'|'行程段颜色使用 #rrggbb 格式。预设颜色包括 #4F46E5、#10B981、#F59E0B 和 #EF4444。'
+'The inclusive 1-based position of the first trip day in the segment.'|'行程段中首个行程日的位置，从 1 开始计数，且包含该日。'
+'The inclusive 1-based position of the last trip day in the segment.'|'行程段中末个行程日的位置，从 1 开始计数，且包含该日。'
+'List a trip’s segments and its ordered days. Use before creating or changing a segment to choose valid, non-overlapping day positions.'|'列出行程中的各个行程段及按顺序排列的行程日期。创建或修改行程段前请先调用此工具，以选择有效且互不重叠的行程日序号。'
+'Get one trip segment with the days, bookings and accommodation stays that fall within it.'|'获取一个行程段及其包含的日期、预订和住宿安排。'
+'Create a non-overlapping segment over an inclusive range of trip-day positions. Call list_trip_segments first.'|'在包含起止日期的行程日序号范围内创建一个不与其他行程段重叠的行程段。请先调用 list_trip_segments。'
+'Replace the name, colour and inclusive day range of an existing trip segment. All editable fields are required.'|'替换现有行程段的名称、颜色和包含起止日的行程日序号范围。所有可编辑字段均为必填项。'
+'Permanently delete one segment. This only removes the segment; it does not delete trip days, bookings or stays.'|'永久删除一个行程段。此操作仅移除该行程段，不会删除行程日期、预订或住宿安排。'
